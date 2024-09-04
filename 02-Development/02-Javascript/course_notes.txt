@@ -1,0 +1,2150 @@
+let Name1 = "Maxwell Wright"
+let Name2 = "Raja Villarreal"
+let Name3 = "Helen Richards"
+
+let Phone1 ="(0191) 719 6495"
+let Phone2 = "0866 398 2895"
+let Phone3 = "0866 398 2895"
+
+let Email1 ="Curabitur.egestas.nunc@nonummyac.co.uk"
+let Email2 = "posuere.vulputate@sed.com"
+let Email3 = "libero@convallis.edu"
+
+console.log(Name1, " ",Phone1, " ", Email1)
+console.log(Name2, " ",Phone2, " ", Email2)
+console.log(Name3, " ",Phone3, " ", Email3)
+
+
+// booleans
+
+let isDataValid = true;
+let isStringTooLong = false;
+let isGameOver = false;
+continueLoop = true;
+
+console.log(false); // -> false
+console.log(typeof false); // -> boolean
+console.log(isDataValid); // -> true
+console.log(typeof isDataValid); // -> boolean
+
+
+// numbers
+const year = 1991;
+let delayInSeconds = 0.00016;
+let area = (16 * 3.14);
+let halfArea = area / 2;
+
+console.log(year); // -> 1991;
+console.log(typeof year); // -> number;
+
+
+let a = 10; // decimal - default 
+let b = 0x10; // hexadecimal 
+let c = 0o10; // octal 
+let d = 0b10; // binary 
+ 
+console.log(a); // -> 10 
+console.log(b); // -> 16 
+console.log(c); // -> 8 
+console.log(d); // -> 2 
+
+let x = 9e3;
+let y = 123e-5;
+console.log(x); // -> 9000
+console.log(y); // -> 0.00123
+
+// infinity and NaN (not a number)
+let a = 1 / 0;
+let b = -Infinity;
+
+console.log(a); // -> Infinity
+console.log(b); // -> -Infinity
+console.log(typeof a); // -> number
+console.log(typeof b); // -> number
+
+let s = "it's definitely not a number";
+let n = s * 10;
+console.log(n); // -> NaN
+console.log(typeof n); // -> number
+
+const year = 1991;
+let delayInSeconds = 0.00016;
+let area = (16 * 3.14);
+let halfArea = area / 2;
+console.log(year); // -> 1991;
+console.log(typeof year); // -> number;
+
+// BigInt
+
+let big = 1234567890000000000000n;
+let big2 = 1n;
+
+console.log(big); // -> 1234567890000000000000n
+console.log(typeof big); // -> bigint
+
+console.log(big2); // -> 1n
+console.log(7n / 4n); // -> 1n
+
+let big3 = 1000n + 20; 
+// -> Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+let big4 = 1000n / 0n; // -> Uncaught RangeError: Division by zero
+
+
+// strings
+let country = "Malawi";
+let continent = 'Africa';
+
+console.log(country); // -> Malawi
+console.log(typeof country); // -> string
+console.log(continent); // -> Africa
+console.log(typeof continent); // -> string
+
+let message1 = "The vessel 'Mars' called at the port.";
+let message2 = 'Cyclone "Cilida" to pass close to Mauritius.';
+
+console.log(message1); // -> The vessel 'Mars' called at the port.
+console.log(message2); // -> Cyclone "Cilida" to pass close to Mauritius.
+
+let message1 = 'The vessel \'Mars\' called at the port.';
+let message2 = "Cyclone \"Cilida\" to pass close to Mauritius.";
+
+console.log(message1); // -> The vessel 'Mars' called at the port.
+console.log(message2); // -> Cyclone "Cilida" to pass close to Mauritius.
+
+let path = "C:\\Windows";
+console.log(path); // -> C:\Windows
+
+let path = "C:\\Windows" - "Windows";
+console.log(path); // -> NaN
+
+let test = "100" - "10";
+console.log(test); // -> 90
+console.log(typeof test); // -> number
+
+let path = "C:\\" + "Windows";
+console.log(path); // -> C:\Windows
+
+let test = "100" + "10";
+console.log(test); // -> 10010
+console.log(typeof test); // -> string
+
+
+// string interpolation
+
+// A very convenient mechanism that was introduced to JavaScript in 2015
+//  is string interpolation. It allows you to treat a character string as a
+//   template, in which you can place values in selected places, such as
+//    those taken from variables. Such a literal is created using backticks
+//    (or grave accents) instead of quotation marks. The places where 
+//    values are inserted are marked with curly brackets preceded 
+//    by a $ sign.
+
+let country = "Malawi";
+let continent = "Africa";
+ 
+let sentence = `${country} is located in ${continent}.`;
+console.log(sentence); // -> Malawi is located in Africa.
+
+let river = "Mekong";
+let character = river.charAt(2);
+console.log(character); // -> k
+
+// common string methods
+
+let str = "java script language";
+
+console.log(str.length); // -> 20
+console.log('test'.length); // -> 4
+
+console.log(str.charAt(0)); // -> 'j'
+console.log('abc'.charAt(1)); // -> 'b'
+
+console.log(str.slice(0, 4)); // -> 'java'
+console.log('test'.slice(1, 3)); // -> 'es'
+
+console.log(str.split(' ')); // -> ['java', 'script', 'language']
+console.log('192.168.1.1'.split('.'));  // -> ['192', '168', '1', '1']
+
+//undefined
+Let declaredVar;
+console.log(typeof declaredVar); // -> undefined
+
+declaredVar = 5;
+console.log(typeof declaredVar); // -> number
+
+declaredVar = undefined;
+console.log(typeof declaredVar); // -> undefined
+
+// The undefined value can also be returned by the typeof operator 
+// when a non-existent variable is used as an argument.
+
+Console.log(typeof notDeclaredVar); // -> undefined
+console.log(notDeclaredVar); // -> Uncaught ReferenceError: notDeclared is not defined
+
+
+// null
+let someResource;
+console.log(someResource); // -> undefined
+console.log(typeof someResource); // -> undefined
+
+someResource = null;
+console.log(someResource); // -> null
+console.log(typeof someResource); // -> object
+
+let someResource;
+console.log(someResource); // -> undefined
+console.log(typeof someResource); // -> undefined
+
+someResource = null;
+console.log(someResource); // -> null
+console.log(typeof someResource); // -> object
+
+// type conversions
+const str = String();
+const num = Number();
+const bool = Boolean();
+
+console.log(str); // ->
+console.log(num); // -> 0
+console.log(bool); // -> false
+
+const big1 = BigInt(42);
+console.log(big1); // -> 42n
+
+const big2 = BigInt();   // -> Uncaught TypeError: Cannot convert undefined to a BigInt
+
+// conversions
+Const num = 42;
+const strFromNum1 = String(num);
+const strFromNum2 = String(8);
+const strFromBool = String(true);
+const numFromStr = Number("312");
+const boolFromNumber = Boolean(0);
+
+// conversion to string
+let str = "text";
+let strStr = String(str);
+console.log(`${typeof str} : ${str}`); // -> string : text
+console.log(`${typeof strStr} : ${strStr}`); // -> string : text
+
+let nr = 42;
+let strNr = String(nr);
+console.log(`${typeof nr} : ${nr}`); // -> number : 42
+console.log(`${typeof strNr} : ${strNr}`); // -> string : 42
+
+let bl = true;
+let strBl = String(bl);
+console.log(`${typeof bl} : ${bl}`); // -> boolean : true
+console.log(`${typeof strBl} : ${strBl}`); // -> string : true
+
+let bnr = 123n;
+let strBnr = String(bnr);
+console.log(`${typeof bnr} : ${bnr}`); // -> bigint : 123
+console.log(`${typeof strBnr} : ${strBnr}`); // -> string : 123
+
+let un = undefined;
+let strUn = String(un);
+console.log(`${typeof un} : ${un}`); // -> undefined : undefined
+console.log(`${typeof strUn} : ${strUn}`); // -> string : undefined
+
+let n = null;
+let strN = String(n);
+console.log(`${typeof n} : ${n}`); // -> object : null
+console.log(`${typeof strN} : ${strN}`); // -> string : null
+
+// conversion to numbers
+console.log(Number(42)); // -> 42
+console.log(Number("11")); // -> 11
+console.log(Number("0x11")); // -> 17
+console.log(Number("0o11")); // -> 9
+console.log(Number("0b11")); // -> 3
+console.log(Number("12e3")); //  -> 12000
+console.log(Number("Infinity"));// -> Infinity
+console.log(Number("text")); // -> NaN
+console.log(Number(14n)); // -> 14
+console.log(Number(123456789123456789123n)); // - >  123456789123
+456800000
+console.log(Number(true)); // -> 1
+console.log(Number(false)); // -> 0
+console.log(Number(undefined)); //  -> NaN
+console.log(Number(null));// -> 0
+
+// conversion to boolean
+console.log(Boolean(true)); // -> true
+console.log(Boolean(42)); // -> true
+console.log(Boolean(0)); // -> false
+console.log(Boolean(NaN)); // -> false
+console.log(Boolean("text")); // -> true
+console.log(Boolean("")); // -> false
+console.log(Boolean(undefined)); // -> false
+console.log(Boolean(null)); // -> false
+
+// conversion to BigInt
+console.log(BigInt(11)); // -> 11n
+console.log(BigInt(0x11)); // -> 17n
+console.log(BigInt(11e2)); // -> 1100n
+console.log(BigInt(true)); // -> 1n
+console.log(BigInt("11")); // -> 11n
+console.log(BigInt("0x11")); // -> 17n
+console.log(BigInt(null)); // -> Uncaught TypeError: Cannot convert null to a BigInt
+console.log(BigInt(undefined)); // -> Uncaught TypeError: Cannot convert undefined to a BigInt
+console.log(BigInt(NaN)); // -> Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
+
+//implicit conversions
+const str1 = 42 + "1";
+console.log(str1);        // -> 421
+console.log(typeof str1); // -> string
+
+const str2 = 42 - "1";
+console.log(str2);        // -> 41
+console.log(typeof str2); // -> number
+
+// So what’s going on? The details will be shown in the chapter on operators, 
+// but the short answer is that when we try to perform an addition when one of the arguments is a string,
+// JavaScript will convert the rest of the arguments to a string as well. This is what is happening with str1
+//  in the example. Subtraction with a string, however, doesn't make much sense, so in that case JavaScript converts 
+//  everything to Numbers.
+
+// Task1
+// Write a code that will create variables and initialize them with values of
+//  Boolean, Number, BigInt, String, and undefined types using (when possible) literals and constructor functions.
+let b1 = true;
+let b2 = Boolean(true);
+
+let n1 = 100;
+let n2 = Number(200);
+
+let bi1 = 100n;
+let bi2 = BigInt(200);
+
+let s1 = "Hello";
+let s2 = String("Hello");
+
+let u1 = undefined;
+
+// Task 2
+
+// Print all values and all types of those values using console.log. Try to use string interpolation to display 
+// the value and type at the same time with a single console.log call, e.g. in the following form: 1000 [number].
+console.log(`${b1} [${typeof b1}]`);
+console.log(`${b2} [${typeof b2}]`);
+console.log(`${n1} [${typeof n1}]`);
+console.log(`${n2} [${typeof n2}]`);
+console.log(`${bi1} [${typeof bi1}]`);
+console.log(`${bi2} [${typeof bi2}]`);
+console.log(`${s1} [${typeof s1}]`);
+console.log(`${s2} [${typeof s2}]`);
+console.log(`${u1} [${typeof u1}]`);
+
+// Task 3
+
+// Carry out a chain of conversions: create a Boolean from a BigInt created from a Number that was 
+// created from a String. Start with the value "1234". Is it possible?
+let b = Boolean( BigInt(Number("1234")));
+console.log(`${b} [${typeof b}]`);
+// or
+let s = "1234";
+let n = Number(s);
+let bi = BigInt(n);
+let b = Boolean(bi);
+console.log(`${b} [${typeof b}]`);
+
+// Task 4
+
+// Try adding two values of the same type and check the result type. Try it for all primitive types.
+let b = true + false;
+let n = 100 + 200;
+let bi = 100n + 200n;
+let s = "He" + "llo";
+let u = undefined + undefined;
+console.log(`${b} [${typeof b}]`); // !!! number 
+console.log(`${n} [${typeof n}]`);
+console.log(`${bi} [${typeof bi}]`);
+console.log(`${s} [${typeof s}]`);
+console.log(`${u} [${typeof u}]`); // !!! number
+
+// Task 5
+
+// Try adding two values of different types and check the results.
+
+Tasks
+
+Task 1
+
+Write a code that will create variables and initialize them with values of Boolean, Number, BigInt, String, and undefined types using (when possible) literals and constructor functions.
+
+Solution
+let b1 = true;
+let b2 = Boolean(true);
+
+let n1 = 100;
+let n2 = Number(200);
+
+let bi1 = 100n;
+let bi2 = BigInt(200);
+
+let s1 = "Hello";
+let s2 = String("Hello");
+
+let u1 = undefined;
+
+
+Task 2
+
+Print all values and all types of those values using console.log. Try to use string interpolation to display the value and type at the same time with a single console.log call, e.g. in the following form: 1000 [number].
+
+Solution
+console.log(`${b1} [${typeof b1}]`);
+console.log(`${b2} [${typeof b2}]`);
+console.log(`${n1} [${typeof n1}]`);
+console.log(`${n2} [${typeof n2}]`);
+console.log(`${bi1} [${typeof bi1}]`);
+console.log(`${bi2} [${typeof bi2}]`);
+console.log(`${s1} [${typeof s1}]`);
+console.log(`${s2} [${typeof s2}]`);
+console.log(`${u1} [${typeof u1}]`);
+
+
+Task 3
+
+Carry out a chain of conversions: create a Boolean from a BigInt created from a Number that was created from a String. Start with the value "1234". Is it possible?
+
+Example
+let b = Boolean( BigInt(Number("1234")));
+console.log(`${b} [${typeof b}]`);
+
+// or
+
+let s = "1234";
+let n = Number(s);
+let bi = BigInt(n);
+let b = Boolean(bi);
+console.log(`${b} [${typeof b}]`);
+
+
+Task 4
+
+Try adding two values of the same type and check the result type. Try it for all primitive types.
+
+Example
+let b = true + false;
+let n = 100 + 200;
+let bi = 100n + 200n;
+let s = "He" + "llo";
+let u = undefined + undefined;
+
+console.log(`${b} [${typeof b}]`); // !!! number 
+console.log(`${n} [${typeof n}]`);
+console.log(`${bi} [${typeof bi}]`);
+console.log(`${s} [${typeof s}]`);
+console.log(`${u} [${typeof u}]`); // !!! number
+
+
+// Task 5
+// Try adding two values of different types and check the results.
+
+let b1 = true + 100; 
+// let b2 = true + 100n; // -> error!
+let b3 = true + "100"; 
+// let n1 = 100 + 200n; // -> error!
+let n2 = 100 + true;
+let n3 = 100 + "200";
+// let bi1 = 100n + 200;  // -> error!
+// let bi2 = 100n + true  // -> error!
+let bi3 = 100n + "200"; 
+let s1 = "100" + 200;
+let s2 = "100" + 200n;
+let s3 = "100" + true;
+let s4 = "abc" + 200;
+let s5 = "abc" + 200n;
+let s6 = "abc" + true;
+console.log(`${b1} [${typeof b1}]`);    // -> 101 [number]
+// console.log(`${b2} [${typeof b2}]`);
+console.log(`${b3} [${typeof b3}]`);    // -> true100 [string]
+// console.log(`${n1} [${typeof n1}]`);
+console.log(`${n2} [${typeof n2}]`);    // -> 101 [number]
+console.log(`${n3} [${typeof n3}]`);    // -> 100200 [string]
+// console.log(`${bi1} [${typeof bi1}]`);
+// console.log(`${bi2} [${typeof bi2}]`);
+console.log(`${bi3} [${typeof bi3}]`);  // -> 100200 [string]
+console.log(`${s1} [${typeof s1}]`);    // -> 100200 [string]
+console.log(`${s2} [${typeof s2}]`);    // -> 100200 [string]
+console.log(`${s3} [${typeof s3}]`);    // -> 100true [string]
+console.log(`${s4} [${typeof s4}]`);    // -> abc200 [string]
+console.log(`${s5} [${typeof s5}]`);    // -> abc200 [string]
+console.log(`${s6} [${typeof s6}]`);    // -> abctrue [string]
+
+// Task 6
+
+// Try to modify the line const str1 = 42 + "1"; to get the result 43 (without removing the quotes around 1).
+const str1 = 42 + +"1";
+
+// Complex data types - Objects
+let testObj = {};
+console.log(typeof testObj); // -> object
+
+let testObj = {
+    nr: 600,
+    str: "text"
+};
+console.log(testObj.nr); // -> 600
+console.log(testObj.str); // -> text
+
+let user1 = {
+    name: "Calvin",
+    surname: "Hart",
+    age: 66,
+    email: "CalvinMHart@teleworm.us"
+};
+
+let user2 = {
+    name: "Mateus",
+    surname: "Pinto",
+    age: 21,
+    email: "MateusPinto@dayrep.com"
+};
+
+console.log(user1.name); // -> Calvin
+console.log(user2.name); // -> Mateus
+
+console.log(user1.age); // -> 66
+user1.age = 67;
+console.log(user1.age); // -> 67
+
+console.log(user2.phone); // -> undefined
+user2.phone = "904-399-7557";
+console.log(user2.phone); // -> 904-399-7557
+
+//deleting properties of objects
+console.log(user2.phone); // -> 904-399-7557
+delete user2.phone;
+console.log(user2.phone); // -> undefined
+
+// Complex data types - Arrays
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+console.log(days[0]); // -> Sun
+console.log(days[2]); // -> Tue
+console.log(days[5]); // -> Fri
+
+days[0] = "Sunday";
+console.log(days[0]); // -> Sunday
+
+let emptyArray = [];
+console.log(emptyArray[0]); // -> undefined
+
+// What's interesting is that we don't have to fill the array with elements one by one – you can leave empty spaces in it.
+let animals = [];
+console.log(animals[0]); // -> undefined
+
+animals[0] = "dog";
+animals[2] = "cat";
+
+console.log(animals[0]); // -> dog
+console.log(animals[1]); // -> undefined
+console.log(animals[2]); // -> cat
+
+// Usually, we store the same type of data in one array, but as we mentioned earlier, 
+// this is not required by JavaScript. So we can easily create an array containing elements of different types
+let values = ["Test", 7, 12.3, false];
+
+// we can also store arrays as elements of the array, and we can access the elements of this nested array using multiple square brackets.
+// The example shows an array declaration containing two other arrays as its components. 
+// Note that the internal arrays do not have to be the same length (in many other programming languages, this is required).
+let names = [["Olivia", "Emma", "Mia", "Sofia"], ["William", "James", "Daniel"]];
+console.log(names[0]); // -> ["Olivia", "Emma", "Mia", "Sofia"]
+console.log(names[0][1]); // -> Emma
+console.log(names[1][1]); // -> James
+
+let femaleNames = names[0];
+console.log(femaleNames[0]); // -> Olivia
+console.log(femaleNames[2]); // -> Mia
+
+let users =[ 
+    {
+        name: "Calvin",
+        surname: "Hart",
+        age: 66,
+        email: "CalvinMHart@teleworm.us"
+    },
+    {
+        name: "Mateus",
+        surname: "Pinto",
+        age: 21,
+        email: "MateusPinto@dayrep.com"
+    }
+];
+
+console.log(users[0].name); // -> Calvin
+console.log(users[1].age); // -> 21
+
+// Let's try to add a new user to the array.
+
+users[2] = {
+    name: "Irene",
+    surname: "Purnell",
+    age: 32,
+    email: "IreneHPurnell@rhyta.com"
+
+}
+
+console.log(users[0].name); // -> Calvin
+console.log(users[1].name); // -> Mateus
+console.log(users[2].name); // -> Irene
+
+
+// If we would like to make sure that the variable contains an array, 
+// we can do it using the instanceof operator, among others.
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let day = "Sunday";
+
+console.log(typeof days); // -> object
+console.log(typeof day); // -> string
+
+console.log(days instanceof Array); // -> true
+console.log(day instanceof Array); // -> false
+
+// The length property is used to get information 
+// about the length (the number of elements) of the array (including empty positions between existing elements).
+let names  = ["Olivia", "Emma", "Mateo", "Samuel"];
+console.log(names.length); // -> 4
+
+names[5] = "Amelia";
+console.log(names.length); // -> 6
+
+console.log(names); // -> ["Olivia", "Emma", "Mateo", 
+"Samuel", undefined, "Amelia"]
+console.log(names[3]); // -> Samuel
+console.log(names[4]); // -> undefined
+console.log(names[5]); // -> Amelia
+
+// The indexOf method is used to search the array to locate a given value. 
+// If the value is found (the element is in the array), its index (position) will be returned. 
+// The method returns -1 if the element is not found. If there is more than one element 
+// with the same value in the array, the index of the first element is returned.
+let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+console.log(names.indexOf("Mateo")); // -> 2
+console.log(names.indexOf("Victor")); // -> -1
+
+// The push method places the element given as its argument at the end of the array. The length of the array 
+// is increased by 1, and the new element is inserted on the right (it has the largest index of all elements).
+let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+console.log(names.length); // -> 4
+
+names.push("Amelia");
+console.log(names.length); // -> 5
+console.log(names); // - > ["Olivia", "Emma", "Mateo", 
+"Samuel", "Amelia"]
+
+// unshift
+// The unshift method works similarly to push, the difference being that a new element is added to the beginning of the array. 
+// The array length is increased by 1, all the old elements are moved to the right and the new element is placed in the empty space 
+// that has been created at the beginning of the array. The index of the new element is 0.
+let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+console.log(names.indexOf("Mateo")); // -> 2
+console.log(names.indexOf("Victor")); // -> -1
+console.log(names.unshift("Jason")); // shifts elaments to the right by 1 and adds 'Jason' at position 0
+console.log(names); // -> Jason,Olivia,Emma,Mateo,Samuel
+
+// The pop method allows you to remove the last element from the array. 
+// As a result of its execution, the element with the largest index is returned, 
+// while at the same time it is removed from the original array. The length of the array is obviously reduced by 1.
+let names= ["Olivia", "Emma", "Mateo", "Samuel"];
+console.log(names.length); // -> 4
+let name = names.pop();
+console.log(names.length); // -> 3
+console.log(name); // -> Samuel
+console.log(names); // -> ["Olivia", "Emma", "Mateo"]
+
+// // The shift method works similarly to pop, only this time we remove the element from the beginning of the array
+//  (with the index 0). The removed element is returned by the method, all other elements are shifted to the left, 
+//  completing the empty space. The length of the original array is reduced by 1.
+let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+console.log(names.length); // -> 4
+
+let name = names.shift();
+console.log(names.length); // -> 3
+console.log(name); // -> Olivia
+console.log(names); // -> ["Emma", "Mateo", "Samuel"]
+
+// The reverse method reverses the order of elements in the array. As a result of its calling, 
+// the first element of the original array will become the last, the second last but one, and so on.
+let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+
+names.reverse();
+console.log(names); // -> ["Samuel", "Mateo", "Emma",
+ "Olivia"]
+
+/* 
+The slice method allows you to create a new array from selected elements of the original array. Calling the method does not affect the original array. The method takes either one or two integer values as arguments.
+The basic combinations are:
+one argument larger than zero – all elements from the index given as an argument to the end of the array are copied;
+two arguments larger than zero – the element from the index specified as the first argument to the element specified as the second argument are copied;
+two arguments, first positive, second negative – all elements from the specified index to the end of the array are copied, except for the specified number of the last elements (e.g. argument -3 means that we do not copy the last three elements)
+one negative argument – the specified number of the last elements are copied to the end of the array (e.g. -2 means that you copy the last two elements).
+*/
+let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+
+let n1 = names.slice(2);
+console.log(n1); // -> ["Mateo", "Samuel"]
+
+let n2 = names.slice(1,3);
+console.log(n2); // -> ["Emma", "Mateo"]
+
+let n3 = names.slice(0, -1);
+console.log(n3); // -> ["Olivia", "Emma", "Mateo"]
+
+let n4 = names.slice(-1);
+console.log(n4); // -> ["Samuel"]
+
+console.log(names); // -> ["Olivia", "Emma", "Mateo", "Samuel"]
+
+//  The concat method creates a new array by attaching elements from the array given as an argument
+//  to the original array elements. The method changes neither the original array nor the array specified as an argument.
+let names = ["Olivia", "Emma", "Mateo", "Samuel"];
+let otherNames = ["William", "Jane"];
+let allNames = names.concat( otherNames);
+
+console.log(names); // -> ["Olivia", "Emma", "Mateo", "Samuel"]
+console.log(otherNames); // -> ["William", "Jane"]
+console.log(allNames); // -> ["Olivia", "Emma", "Mateo", "Samuel", "William", "Jane"]
+
+// Operators
+// operator precedence
+console.log(2 + 2 * 2); // -> 6
+console.log(2 + (2 * 2)); // -> 6
+console.log((2 + 2) * 2); // -> 8
+
+
+const x = 5;
+const y = 2;
+
+console.log("addition: ", x + y); // -> 7
+console.log("subtraction: ", x - y); // -> 3
+console.log("multiplication: ", x * y); // -> 10
+console.log("division: ", x / y); // -> 2.5
+console.log("division remainder :", x % y); // -> 1
+console.log("exponent: ", x ** y); // -> 25
+
+// Unary arithmetic operators
+let str = "123";
+let n1 = +str;
+let n2 = -str;
+let n3 = -n2;
+let n4 = +"abcd";
+
+console.log(`${str} : ${typeof str}`); // -> 123 : string
+console.log(`${n1} : ${typeof n1}`); // -> 123 : number
+console.log(`${n2} : ${typeof n2}`); // -> -123 : number
+console.log(`${n3} : ${typeof n3}`); // -> 123 : number
+console.log(`${n4} : ${typeof n4}`); // -> NaN : number
+
+// Unary increment and decrement operators
+
+//  Keep in mind that the Number type is a floating-point type, 
+// which means that the results of some of the operations may be imprecise.
+console.log(0.2 + 0.1);     // 0.30000000000000004
+console.log(0.2 * 0.1);     // 0.020000000000000004
+console.log(0.3 / 0.1);     // 2.9999999999999996
+
+console.log(++n1);
+// means the same as:
+console.log(n1);
+n1 = n1 + 1;
+//  whilst
+console.log(n1++);
+// means the same as:
+n1 = n1 + 1;
+console.log(n1);
+
+let n1 = 10;
+let n2 = 10;
+console.log(n1); // -> 10
+console.log(n1++); // -> 10
+console.log(n1); // -> 11
+console.log(n2); // -> 10
+console.log(++n2); // -> 11
+console.log(n2); // -> 11
+let n3 = 20;
+let n4 = 20;
+console.log(n3); // -> 20
+console.log(n3--); // -> 20
+console.log(n3); // -> 19
+console.log(n4); // -> 20
+console.log(--n4); // -> 19
+console.log(n4); // -> 19
+
+// Compound Assignment Operators
+x += 100;
+// could be written down in the form:
+x = x + 100;
+
+let x = 10;
+x += 2;
+console.log(x); // -> 12
+x -= 4;
+console.log(x); // -> 8
+x *= 3;
+console.log(x); // -> 24
+x /= 6;
+console.log(x); // -> 4
+x **= 3;
+console.log(x); // -> 64
+x %= 10;
+console.log(x); // -> 4
+
+// Logical operators
+console.log(true && true); // -> true
+console.log(true && false); // -> false
+console.log(false && true); // -> false
+console.log(false && false); // -> false
+
+console.log(true || true); // -> true
+console.log(true || false); // -> true
+console.log(false || true); // -> true
+console.log(false || false); // -> false
+
+console.log(!true); // -> false
+console.log(!false); // -> true
+
+const a = false;
+const b = true;
+const c = false;
+const d = true;
+console.log(a && b && c || d); // -> true
+console.log(a && b && (c || d)); // -> false
+
+// Logical operators and non-Boolean values
+let nr = 0;
+let year = 1970;
+let name = "Alice";
+let empty = "";
+
+console.log(!nr); // -> true
+console.log(!year); // -> false
+console.log(!name); // -> false
+console.log(!empty); // -> true
+
+console.log(!!nr); // -> false
+console.log(!!name); // -> true
+
+console.log(true && 1991); // -> 1991
+console.log(false && 1991); // -> false
+console.log(2 && 5); // -> 5
+console.log(0 && 5); // -> 0
+console.log("Alice" && "Bob"); // -> Bob
+console.log("" && "Bob"); // -> empty string
+
+
+console.log(true || 1991); // -> true
+console.log(false || 1991); // -> 1991
+console.log(2 || 5); // -> 2
+console.log(0 || 5); // -> 5
+console.log("Alice" || "Bob"); // -> Alice
+console.log("" || "Bob"); // -> Bob
+
+// Compound Assignment Operators
+let a = true;
+console.log(a); // -> true
+a &&= false;
+console.log(a); // -> false
+
+let b = false;
+console.log(b); // -> false
+b ||= true;
+console.log(b); // -> true
+
+// String operators
+let greetings = "Hi";
+console.log(greetings + " " + "Alice"); // -> Hi Alice
+
+let sentence = "Happy New Year ";
+let newSentence = sentence + 10191;
+
+console.log(newSentence); // -> Happy New Year 10191
+console.log(typeof newSentence); // -> string
+
+// Compound Assignment Operators
+let sentence = "Happy New ";
+sentence += "Year ";
+sentence += 10191;
+console.log(sentence); // -> Happy New Year 10191
+
+// Comparison operators
+/*
+To check if the operands are equal, 
+we can use either the identity (strict equality) operator === or the equality operator ==.
+The first is more restrictive, and in order to return true, the operands must be identical 
+(i.e. they must be equal and of the same type).
+*/
+console.log(10 === 5); // -> false
+console.log(10 === 10); // -> true
+console.log(10 === 10n); // -> false
+console.log(10 === "10"); // -> false
+console.log("10" === "10"); // -> true
+console.log("Alice" === "Bob"); // -> false
+console.log(0 === false); // -> false
+console.log(undefined === false); // -> false
+
+/* Note that if any of the operands has a NaN value (or has been converted to NaN, 
+    e.g. with undefined), the equality operator will return false.
+    Remember! Use the identity operator unless you intentionally allow for a positive comparison between the different types.
+*/
+console.log(10 == 5); // -> false
+console.log(10 == 10); // -> true
+console.log(10 == 10n); // -> true
+console.log(10 == "10"); // -> true
+console.log("10" == "10"); // -> true
+console.log("Alice" == "Bob"); // -> false
+console.log(0 == false); // -> true
+console.log(undefined == false); // -> false
+console.log(NaN == NaN); // -> false
+
+/*
+There are also complementary operators to those just demonstrated – 
+the nonidentity operator !== and the inequality operator !=. 
+The first returns true if the operands are not identical, in other words, 
+they are equal but of different types, or they are simply different. 
+The second returns true if the operands are different.
+*/
+console.log(10 !== 5); // -> true
+console.log(10 !== 10); // -> false
+console.log(10 !== 10n); // -> true
+console.log(10 !== "10"); // -> true
+console.log("10" !== "10"); // -> false
+console.log("Alice" !== "Bob"); // -> true
+console.log(0 !== false); // -> true
+console.log(undefined !== false); // -> true
+console.log(10 != 5); // -> true
+console.log(10 != 10); // -> false
+console.log(10 != 10n); // -> false
+console.log(10 != "10"); // -> false
+console.log("10" != "10"); // -> false
+console.log("Alice" != "Bob"); // -> true
+console.log(0 !=  false); // -> false
+console.log(undefined != false); // -> true
+console.log(NaN != NaN); // -> true
+
+/*
+We also have operators that allow us to check if one of the operands is bigger than >, 
+smaller than <, bigger than or equal to >=, and smaller than or equal to <=. 
+These operators work on any type of operand, but it makes sense to use them only on numbers 
+or values that will convert correctly to numbers.
+*/
+console.log(10 > 100); // -> false
+console.log(101 > 100); // -> true
+console.log(101 > "100"); // -> true
+console.log(101 < 100); // -> false
+console.log(100n < 102); // -> true
+console.log("10" < 20n); // -> true
+console.log(101 <= 100); // -> false
+console.log(10 >= 10n); // -> true
+console.log("10" <=  20); // -> true
+
+/*
+You can also use them to compare strings that do not represent numbers, 
+but the algorithm of this comparison is quite complex, and the comparison itself is not very useful. 
+By way of simplification, single characters of both strings are tested on the same positions. 
+It is assumed that the values of the single characters correspond to their positions in the alphabet 
+(the letter b has a higher value than the letter a). Upper-case letters have lower values than lower-case letters, 
+and digits have even lower values.
+*/
+console.log("b" > "a"); // -> true
+console.log("a" > "B"); // -> true
+console.log("B" > "A"); // -> true
+console.log("A" > "4"); // -> true
+console.log("4" > "1"); // -> true
+console.log("ab1" < "ab4"); // -> true
+console.log("ab4" < "abA"); // -> true
+console.log("abB" < "aba"); // -> true
+console.log("aba" < "abb"); // -> true
+console.log("ab" < "ab4"); // -> true
+
+// Other operators
+// typeof
+let year = 10191;
+console.log(typeof year); // -> number
+console.log(typeof false); // -> boolean
+
+// instanceof
+let names = ["Patti", "Bob"];
+let name = names[0];
+console.log(names instanceof Array); // -> true
+console.log(name instanceof Array); // -> false
+
+// delete The unary delete operator was introduced while discussing objects. 
+// It allows you to delete a selected field of the object whose name is indicated with an operand.
+let user = {
+    name: "Alice",
+    age: 38
+  };
+  console.log(user.age); // -> 38
+  delete user.age;
+  console.log(user.age); // -> undefined
+
+//   ternary The last of the operators discussed is quite unusual, because it is the only operator using three operands.
+//  It is a conditional operator. Based on the value of the first operand (true or false), 
+// the value of the second or third operand, respectively, is returned.
+console.log(true ? "Alice" : "Bob"); // -> Alice
+console.log(false ? "Alice" : "Bob"); // -> Bob
+// example
+let name = 1 > 2 ? "Alice" : "Bob";
+console.log(name); // -> Bob
+
+
+//  Alert Dialog Box
+alert("Hello, World!")
+window.alert("Hello, World! for the second time");
+alert(4 * 7);
+alert(true);
+alert("text 1", "text 2"); // only "text 1" will be displayed
+
+// Confirm Dialog box
+/*  Depending on the button pressed by the user, the confirm method returns a Boolean value. 
+True is returned when the user closes the dialog box using the OK button, 
+and false is returned when the user presses the Cancel button. */
+let decision = window.confirm("Is it OK?");
+console.log(decision);
+
+let remove = confirm("Remove all data?");
+let message = remove ? "Deleting Data" : "Cancelled"
+console.log(message);
+
+// Prompt dialog box
+/* The last of the dialog boxes is the prompt dialog box. It’s a further development of the confirm popup. Like the confirm dialog box, 
+it contains the OK and Cancel buttons, but it also contains a single-line text field that allows the user to input text.
+As with other dialog boxes, the prompt accepts an optional parameter as a message that will be displayed. 
+The prompt also accepts a second optional parameter, which is the default value of the text field visible 
+in the dialog window. The same as confirm, the prompt method will return a result that is dependent on user input.*/
+
+let name = window.prompt("What is your name?", "John Doe");
+name = name ? name : "anonymous";
+let age = prompt("Hello " + name + " how old are you?");
+alert(name + " is " + age + " years old");
+
+let width = window.prompt("What is the width of the box?");
+let length = window.prompt("What is the length of the box?");
+let height = window.prompt("What is the height of the box?");
+volume = width * height * length;
+alert("The volume of the box is " + volume);
+
+
+// conditions
+let number = prompt("Enter a random number");
+if(number > 90 && number < 110) {
+    alert("Bingo!");
+} else {
+    alert("Miss");
+
+// ternary condition
+let number = prompt("Enter a random number");
+let message = (number > 90 && number < 110) ? "Bingo!": "Miss";
+alert(message);
+
+// calculator program
+let firstNumber = Number(prompt("Enter first number"));
+let secondNumber = Number(prompt("Enter second number"));
+let operand = prompt("Enter operand (+, -, * or /)");
+let result;
+
+if (!Number.isNaN(firstNumber) && !Number.isNaN(secondNumber)) {
+    switch (operand) {
+        case "+": result = firstNumber + secondNumber; break;
+        case "-": result = firstNumber - secondNumber; break;
+        case "*": result = firstNumber * secondNumber; break;
+        case "/": result = firstNumber / secondNumber; break;
+        default: result = "Error: unknown operand";
+    }
+} else {
+    result = "Error: at least one of the entered values is not a number";
+}
+alert(result);
+
+// LOOPS
+
+// while loops
+let n = 0;
+while(n < 91) {
+    console.log(n); // -> 0, 10, 20, 30, 40, 50, 60, 70, 80, 90
+    n += 10;
+}
+
+////////////////
+let isOver = false;
+let counter = 1;
+
+while (isOver != true) {
+    let continueLoop = confirm(`[${counter}] Continue the loop?`);
+    isOver = continueLoop === true ? false : true;
+    counter = counter + 1;
+}
+
+/*
+The do … while loop
+The do ... while loop is very similar to the plain while loop, 
+the main difference being that in a while loop, the condition 
+is checked before each iteration, and in the do ... whileloop, 
+the condition is checked after each iteration. 
+*/
+
+let isOver;
+let counter = 1;
+
+do {
+    isOver = !confirm('[${counter++}] Continue the loop?');
+} while (!isOver);
+
+///////////////
+let condition = false;
+
+while (condition) {
+    console.log("A while loop iteration."); // never executed
+}
+
+do {
+    console.log("A do ... while loop iteration."); // executed once
+} while (condition);
+
+
+// FOR loop
+/* SYNTAX 
+for (initialization; condition; increment) {
+    block of code
+}*/
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+/*
+As shown in the syntax of the for loop, there are three expressions inside the parentheses. 
+The let i = 0 is an initialization, i < 10 is a condition, and i++ is an increment. 
+Now let's try to rewrite the same example using the while loop:
+*/
+
+let i = 0;
+while (i < 10) {
+    console.log(i);
+i++;
+}
+
+// for loop iterating an array example
+let values = [10, 30, 50, 100];
+let sum = 0;
+for (let i = 0; i < values.length; i++) {
+    sum += values[i];
+}
+console.log(sum); // -> 190
+
+/////////////
+let names = [];
+let isOver = false;
+while (!isOver) {
+    let name = prompt("Enter another name or press cancel.");
+    if (name != null) {
+        names.push(name);
+    } else {
+        isOver = true;
+    }
+}
+
+for (let i = 0; i < names.length; i++){
+    console.log(names[i]);
+}
+
+/* 
+for … of loops
+In addition to the regular for loop, there are two specific versions, one of which, 
+for ... of, is dedicated for use with arrays (and other iterative structures, 
+which are however beyond the scope of this course).
+*/
+// this means this code
+let values = [10, 30, 50, 100];
+let sum = 0;
+for (let i = 0; i < values.length; i++) {
+    sum += values[i];
+}
+console.log(sum); // -> 190
+
+// can be replaced with this FOR OF loop........
+let values = [10, 30, 50, 100];
+let sum = 0;
+for (let number of values) {
+    sum += number;
+}
+console.log(sum); // -> 190
+
+// another example
+let cities = [
+    { name: "New York", population: 18.65e6 },
+    { name: "Cairo", population: 18.82e6 },
+    { name: "Mumbai", population: 19.32e6 },
+    { name: "São Paulo", population: 20.88e6 },
+    { name: "Mexico City", population: 21.34e6 },
+    { name: "Shanghai", population: 23.48e6 },
+    { name: "Delhi", population: 25.87e6 },
+    { name: "Tokyo", population: 37.26e6 }
+];
+
+for (let city of cities) {
+    if (city.population > 20e6) {
+        console.log(`${city.name} (${city.population})`);
+    }
+}
+
+// FOR IN loops
+/*
+for … in
+There is also a version of the for loop that enables us to walk through object fields. 
+This is a for ... in construction. It iterates through all fields of the indicated object, 
+placing the names of these fields (or keys) in the variable. In the example, we use an object 
+containing data about a user:
+*/
+let user = {
+    name: "Calvin",
+    surname: "Hart",
+    age: 66,
+    email: "CalvinMHart@teleworm.us"
+};
+
+for (let key in user) {
+    //console.log(key); // -> name, surname, age, email
+    console.log('${key} -> ${user[key]}');
+};
+
+/*
+The break and continue statements
+The break statement is used to terminate the execution of a loop or a switch statement.
+*/
+
+// BREAK
+let i = 0;
+// An infinite loop
+while (true){
+    console.log(i);
+    i++;
+    if (i >= 5) {
+        break;
+    }
+}
+
+alert(`Exited the loop with a break (${i}).`);
+
+// CONTINUE
+/* Just like break, continue can be used in loops (but not in the switch statement). 
+When used, it applies to the closest surrounding loop. The continue statement, 
+in contrast to break, does not end the whole loop, but rather starts the next iteration of this loop. 
+We can think of it as jumping right to the end of the current iteration.
+*/
+
+/*
+The program writes numbers from 0 to 9 to the console, but skips the number 3. 
+This happens because when i equals 3, the continue statement is executed, 
+ending this iteration (and skipping the console.log statement) and starting another one.
+*/
+for (let i = 0; i < 10; i++) {
+    if (i == 3) {
+        continue;
+    }
+    console.log(i);
+}
+
+/*
+
+The break keyword
+We also need to say a few words about the break keyword. In the example, 
+the break keyword is present in all cases except in the default case. 
+In contrast to if statements, switch statements do not execute just one branch, 
+but rather they execute the entire code from the first case that matches 
+until the end of the switch statement. This behavior is called pass-through and has some uses, 
+but most of the time we want to execute only one branch, and for that reason the break keyword is present. 
+When a JavaScript interpreter comes to a break, it will jump out of the current switch statement.
+*/
+
+// To understand this better, look at this slightly modified example of a switch statement:
+/*
+The only difference is that now there are no break keywords at all. 
+Run this code and check what happens when the answer "a" is given to the prompt dialog. 
+Now all alerts are displayed, even the default one.
+*/
+
+let gate = prompt("Choose gate: a, b, or c");
+let win = false;
+
+switch (gate) {
+    case "a":
+        alert("Gate A: empty");
+    case "b":
+        alert("Gate B: main prize");
+        win = true;
+    case "c":
+        alert("Gate C: empty");
+    default:
+        alert("No gate " + String(gate));
+}
+
+if (win) {
+    alert("Winner!");
+}
+
+// The fall-through can be useful when more than one case should end with exactly the same behavior.
+let gate = prompt("Choose gate: a, b, or c");
+let win = false;
+
+switch (gate) {
+    case "a":
+    case "A":
+    case 1:
+    case "1":
+        alert("Gate A: empty");
+        break;
+    case "b":
+    case "B":
+    case 2:
+    case "2":
+        alert("Gate B: main prize");
+        win = true;
+        break;
+    case "c":
+    case "C":
+    case 3:
+    case "3":
+        alert("Gate C: empty");
+        break;
+    default:
+        alert("No gate " + String(gate));
+}
+
+if (win) {
+    alert("Winner!");
+}
+
+/*
+The code visible in the example will behave the same when "a", "A", 1 or "1" is given as the answer to the prompt.
+
+The last important part is that if a more complex code is needed inside any given case, 
+we should place that code in separate code blocks by additionally surrounding the code 
+with curly brackets. This will add to code readability and allow for the declaration 
+of variables only in the given case scope. */
+let gate = prompt("Choose gate: a, b, or c");
+let win = false;
+
+switch (gate) {
+    case "a": {
+        let message = "Gate A";
+        console.log(message);
+        break;
+    }
+    case "b": {
+        let message = "Gate B";
+        console.log(message);
+        break;
+    }
+    case "c": {
+        let message = "Gate C";
+        console.log(message);
+        break;
+    }
+    default:
+        alert("No gate " + String(gate));
+}
+
+if (win) {
+    alert("Winner!");
+}
+//In the example, a redeclaration error would be observed in each of the cases and would not be 
+// encapsulated in its own scope.
+
+/* Tasks
+Write a piece of code that will write numbers from 100 to 0 to the console, 
+but in steps of 10; so 100, 90, 80... etc.*/
+for (i=100; i>=0; i-=10) {
+    console.log(i);
+}
+
+// TASKS
+/*
+Write a piece of code that will write numbers from 100 to 0 to the console,
+but in steps of 10; so 100, 90, 80... etc.
+*/
+for (i=100; i>=0; i-=10) {
+    console.log(i);
+}
+/*
+Task 2
+
+Modify the previous program so that it asks the user for the first and last number 
+it uses instead of 100 and 0 (hint: use the prompt dialog). Check if the entered values 
+are correct (that the initial value is greater than the final value).
+*/
+Example
+let upperLimit = Number(prompt("Enter upper limit"));
+let lowerLimit = Number(prompt("Enter lower limit"));
+
+if (!Number.isNaN(upperLimit) && !Number.isNaN(lowerLimit) && upperLimit > lowerLimit) {
+    for (i = upperLimit; i >= lowerLimit; i -= 10) {
+        console.log(i);
+    }
+}
+/*
+
+Task 3
+
+There are ten different numbers in this numbers array.
+let numbers = [21, 45, 100, 12, 11, 78, 61, 4, 39, 22];
+
+Write a program that first writes out all these numbers on the console,
+then only those that are even (hint: the remainder of dividing an even number by 2 
+is equal to 0), then only those that are larger than 10 and at the same time smaller than 60.
+*/
+let numbers = [21, 45, 100, 12, 11, 78, 61, 4, 39, 22];
+
+for (number of numbers) {
+    console.log(number);
+}
+
+for (number of numbers) {
+    if (number % 2 === 0) {
+        console.log(number);
+    }
+}
+
+for (number of numbers) {
+    if (number > 10 && number < 60) {
+        console.log(number);
+    }
+}
+ /*
+ Task 4
+
+Write a program using a loop that will ask the user for the name of the movie (first prompt)
+and its rating from www.imdb.com (second prompt). The program will allow you to enter as many movies
+ as you want into the movies array. Each element of the array will be an object, 
+ consisting of two fields: title and imdb. The input is completed if the user presses Cancel in the prompt dialog. 
+ Then the program should first print out to the console all movies that have a rating of less than 7, 
+ then those whose rating is greater than or equal to 7. 
+ Write the name of the movie and its rating next to each other, e.g.:Lost in Translation (7.7)
+ */
+ let movies = [];
+ while (true) {
+     let title = prompt("Enter movie title");
+     let rating = prompt("Enter movie rating (imdb)");
+ 
+     if (title === null || rating === null) {
+         break
+     } else {
+         movies.push({
+             title: title,
+             rating: Number(rating)
+         });
+     }
+ }
+ 
+ console.log("All with ratings under 7:");
+ for (movie of movies) {
+     if (movie.rating < 7) {
+         console.log('${movie.title} (${movie.rating})');
+     }
+ }
+ 
+ console.log("All with ratings over 7:");
+ for (movie of movies) {
+     if (movie.rating >= 7) {
+         console.log('${movie.title} (${movie.rating})');
+         break;
+     }
+ }
+
+ /* Parameters validation
+ Remember how we said that we sometimes use the return keyword to interrupt functions in the case of errors?
+  A good example is the validation of function parameters.
+ */
+ function getMeanTemp(temperatures) {
+    if (!(temperatures instanceof Array)) {
+        return NaN;
+    }
+    let sum = 0;
+    for (let i = 0; i < temperatures.length; i++) {
+        sum += temperatures[i];
+    }
+    return sum / temperatures.length;
+}
+
+console.log(getMeanTemp(10));       // -> NaN
+console.log(getMeanTemp([10, 30])); // -> 20
+
+/*
+Recursion
+Let's try to write a function that will calculate the factorial from the given number. 
+It will take the parameter n and return the calculated value.
+*/
+function factorial (n) {
+    let result = 1;
+    while (n > 1) {
+        result *= n;
+        n--;
+    }
+    return result;
+}
+
+console.log(factorial(6)); // -> 720
+
+// Let's declare the factorial function again, this time using recursion.
+function factorial (n) {
+    return n > 1 ? n * factorial(n - 1) : 1;
+}
+
+console.log(factorial(6)); // -> 720
+
+/*
+Functions as first-class members
+In JavaScript, functions are first-class members. 
+This term means that functions can be treated as any data, which can be stored in variables
+or passed as arguments to other functions. For example, we can declare the showMessage function
+and then store it in the variable sm.
+*/
+function showMessage(message) {
+    console.log('Message: ${message}');
+}
+
+let sm = showMessage;
+// We can store any function that is accessible in this scope in a variable 
+// and use a function call operator () to execute it. We can check that the sm variable 
+// is now a function by using the typeof operator
+sm("This works!"); // -> Message: This works!
+console.log(typeof sm); // -> function
+/*
+But it’s important to remember that when assigning a function to a variable, 
+we don't use a function call operator, as this would execute the function and 
+assign the result of the function to a variable, and not to the function itself.
+*/
+function doNothing() {
+    return undefined;
+}
+
+let a = doNothing(); // assign result of function call
+let b = doNothing;   // assign a function
+
+console.log(typeof a); // -> undefined
+console.log(typeof b); // -> function
+
+/*
+In the example, the result of the doNothing function call 
+(i.e. the undefined value returned by the function) is stored in the a variable, 
+while the doNothing function itself is stored in the b variable (or more precisely, 
+a reference to the function is stored in the b variable).
+This property is especially useful when passing the function as a call parameter 
+to other functions, which we will soon learn more about. 
+For now, let's test that something like this is actually feasible.
+*/
+function add(a, b) {
+    return a + b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function operation(func, first, second) {
+    return func(first, second);
+}
+
+console.log(operation(add, 10, 20)); // -> 30
+console.log(operation(multiply, 10, 20)); // -> 200
+
+// The operation function takes as its first argument the function (parameter func) 
+// and calls it with the other two arguments passed (parameters first and second).
+
+/*
+
+Function expressions
+To store a function in a variable or pass it as an argument to call a function, 
+you do not necessarily have to declare it previously and use its name. 
+Let's go back to our example with the add function:
+*/
+function add(a, b) {
+    return a + b;
+}
+
+let myAdd = add;
+console.log(myAdd(10, 20));     // -> 30
+console.log(add(10, 20));   // -> 30
+
+/*
+We first declare the add function, and then store it in the variable myAdd. 
+We can call the same function using both the name add and the variable myAdd. 
+We can shorten this notation and declare the function by storing it in a variable.
+*/
+let myAdd = function add(a, b) {
+    return a + b;
+}
+
+console.log(myAdd(10, 20)); // -> 30
+console.log(add(10, 20)); // -> 30
+
+/*
+Let's go back to the concept of anonymous functions. It may seem a little incomprehensible 
+when you use a name (although it is a variable name) to refer to a function. 
+In this case, it's about anonymity, i.e. the lack of a name, in the very definition of a function. 
+This will be much more evident when passing a function as a call parameter to another function. 
+Let's look at the example:
+*/
+function operation(func, first, second) {
+    return func(first, second);
+}
+
+let myAdd = function(a, b) {
+    return a + b;
+}
+
+console.log(operation(myAdd, 10, 20)); // -> 30
+
+console.log(operation(function(a, b) {
+    return a * b; 
+}, 10, 20)); // -> 200
+
+/*
+In the first step, we declare the function operation (it is a named function, and we use the function 
+statement here, so we will refer to the function by its name). 
+In the next step, we define an anonymous function, which we store in the myAdd variable 
+(we use a function expression). We call the operation function, passing the myAdd function 
+and values 10 and 20 as arguments.
+
+The result is easy to predict. It only gets interesting when we call the operation function again. 
+This time, the first argument is the anonymous function (again the function expression), 
+which is defined directly in an operation call. The result is a multiplication, 
+although the name of the new function (or the variable in which it could be placed) 
+will not appear anywhere. The function has been defined only to pass it once into the operation function. 
+At first glance, it may look like a completely useless mechanism, but in the real world, it is used very often.
+*/
+
+
+/*
+Callbacks
+Functions that are passed as arguments to other functions may seem quite exotic and not very helpful, 
+but in fact, they are a very important part of programming. So important that they even get their own name.
+They are callback functions. As we have seen in previous examples, a function that receives a callback 
+as an argument can call it at any time. Importantly, in our examples, the callback is run synchronously, 
+that is, it is executed in a strictly defined order resulting from where it is placed among the other 
+instructions.
+
+Synchronous callbacks
+Synchronous execution is the most natural way to see how the program works. 
+Subsequent instructions are executed in the order in which they are placed in the code. 
+If you call a function, the instructions in it will be executed at the time of the call. 
+If we pass another function to this function as an argument, and we call it inside an outer function as well, 
+then all instructions will keep their natural order.
+*/
+let inner = function() {
+    console.log('inner 1');
+}
+
+let outer = function(callback) {
+    console.log('outer 1');
+    callback();
+    console.log('outer 2');
+}
+
+console.log('test 1');
+outer(inner);
+console.log('test 2');
+
+// Execution of the above code will cause the console to print out the following text in this exact order:
+// test 1
+// outer 1
+// inner 1
+// outer 2
+// test 2
+
+
+/*
+
+Asynchronous callbacks
+Asynchronous operation of programs is a rather complex topic, strongly dependent on a particular 
+programming language, and often also on the environment.
+
+In the case of client-side JavaScript running in a browser, it is limited to event-based programming, 
+i.e. the asynchronous response to certain events. An event can be a signal sent by a timer, 
+a user action (e.g. pressing a key or clicking on a selected interface element), or information 
+about receiving data from the server.
+
+Using appropriate functions, we combine a specific type of event with a selected callback function, 
+which will be called when the event occurs.
+
+One of the simplest cases when there is an asynchronous execution of instructions is the use 
+of the setTimeout function. This function takes another function (a callback) and the time expressed
+ in milliseconds as arguments. The callback function is executed after the specified time, and meanwhile,
+ the next program instruction (placed in the code after setTimeout) will be executed.
+
+Thus, the moment the callback function is called is not determined by its order, 
+but by an arbitrarily imposed delay. The delay only applies to the callback function given to setTimeout, 
+while the rest of the code is still executed synchronously.
+
+Let's modify the previous example a bit. In the outer function, we do not call callback() immediately,
+ but pass it to setTimeout, which executes it with a delay of 1000 milliseconds (one second).
+
+The result is actually a bit different than we observed in the previous example, 
+as this time the following sequence of messages will appear on the console 
+(the last with a delay of one second):
+*/
+
+let inner = function() {
+    console.log('inner 1');
+}
+
+let outer = function(callback) {
+    console.log('outer 1');
+    setTimeout(callback, 1000) /*ms*/;
+    console.log('outer 2');
+}
+console.log('test 1');
+outer(inner);
+console.log('test 2');
+
+// result is:
+// test 1
+// outer 1
+// outer 2
+// test 2
+// ...
+// inner 1
+
+/*
+
+setTimeout and setInterval functions
+The setTimeout function is used when you want to cause a delayed action. 
+A similar function is setInterval. This time, the action is also performed 
+with a delay, but periodically, so it is repeated at fixed intervals. 
+In the meantime, the main program is executed, and at every specified time, 
+the callback given as an argument for a setInterval call is called.
+*/
+let inner = function() {
+    console.log('inner 1');
+}
+let outer = function(callback) {
+    console.log('outer 1');
+let timerId = setInterval(callback, 1000) /*ms*/;
+console.log('outer 2');
+setTimeout(function(){
+    clearInterval(timerId);
+}, 5500);
+}
+console.log('test 1');
+outer(inner);
+console.log('test 2');
+
+/*
+
+Asynchronous callbacks - continued
+If we run the JavaScript code on the client side, in the browser, 
+it is always associated with the website. The window in which this page is located
+is represented in the client-side JavaScript by a global window variable. 
+The window object has a method (or its own function) named addEventListener. 
+This function allows you to register a certain action to be performed in response 
+to a window-related event. Such an event can be a "click", which is a single mouse click 
+on any place on the page (there is a limited set of named events associated with a particular object, 
+to which it can react). The action to be taken is passed to the addEventListener method 
+as a callback function.
+*/
+window.addEventListener("click", function() {
+    console.log("clicked!");
+});
+
+
+// Arrow functions
+// An arrow function is a shorter form of a function expression.
+let add = function(a, b) {
+    return a + b;
+}
+console.log(add(10, 20)); // -> 30
+
+// can be written as an arrow function using => and removing tghe 'function' expression
+let add = (a, b) => {
+    return a + b;
+}
+console.log(add(10, 20)); // -> 30
+
+// or simplified even further
+let add = (a, b) => a + b;
+console.log(add(10, 20)); // -> 30
+
+
+/*
+One typical example of using arrow functions is the forEach method, available in Array type data. 
+We have learned several ways of passing through array elements, using different types of loops. 
+The forEach method is another, and frankly speaking, currently the most used one. 
+This method takes as an argument ... a function.
+*/
+let names = ['Alice', 'Eve', 'John'];
+function showName(element) {
+    console.log(element);
+}
+names.forEach(showName); // -> Alice, Eve, John
+
+/*
+
+Tasks
+
+Task 1
+
+Arrays in JavaScript have a sort method available which, as you might guess, allows you to sort its elements.
+This method takes as an argument a function that will compare two elements of the array. 
+The function should return zero if we consider the arguments to be the same, 
+a value less than zero if we consider the first one to be smaller than the second, 
+and a value larger than zero otherwise. Take a look at the example:
+*/
+let numbers = [50, 10, 40, 30, 20];
+function compareNumbers(a, b) {
+    let retVal = 0;
+    if (a < b) {
+        retVal = -1;
+    } else if(a > b) {
+        retVal = 1;
+    }
+    return retVal;
+}
+let sorted = numbers.sort(compareNumbers);
+console.log(sorted); // [10, 20, 30, 40, 50]
+
+/*
+ Try to modify the above piece of code to make it as short as possible. Suggestions:
+use an anonymous function;
+use an arrow function;
+consider skipping the if statement.
+*/
+
+let numbers = [50, 10, 40, 30, 20];
+let sorted = numbers.sort((a, b) => a - b);
+console.log(sorted); // [10, 20, 30, 40, 50]
+
+// B. Then modify the function so that the elements are sorted in descending order, 
+// not in ascending order as in the example.
+let numbers = [50, 10, 40, 30, 20];
+let sorted = numbers.sort((a, b) => b - a);
+console.log(sorted); // [10, 20, 30, 40, 50]
+
+/*
+Task 2
+
+Write three functions with the names add, sub, and mult, which will take two numerical arguments. 
+The functions are to check if the given arguments are integers (use Number.isInteger). 
+If not, they return NaN, otherwise they return the result of addition, subtraction, 
+or multiplication respectively. The functions are to be declared using a function statement.
+
+Example of use and expected results:
+*/
+console.log(add(12, 10)); // -> 22
+console.log(mult(12, 10.1)); // -> NaN
+
+// solution
+
+function add(a, b) {
+    if (!Number.isInteger(a) || !Number.isInteger(b)) {
+        return NaN;
+    }
+    return a + b;
+}
+
+function sub(a, b) {
+    if (!Number.isInteger(a) || !Number.isInteger(b)) {
+        return NaN;
+    }
+    return a - b;
+}
+
+function mult(a, b) {
+    if (!Number.isInteger(a) || !Number.isInteger(b)) {
+        return NaN;
+    }
+    return a * b;
+}
+
+// Task 3
+
+// Rewrite the functions from the previous task using an arrow function expression, trying to write them in the shortest possible form.
+
+// Example of use and expected results:
+console.log(sub(12, 10)); // -> 2
+console.log(mult(10, 10.1)); // -> NaN
+
+// Solution
+let add = (a, b) => !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a + b;
+let sub = (a, b) => !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a - b;
+let mult = (a, b) => !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a * b;
+
+/*
+Task 4
+Write an action function that will take the callback function as its first argument and the 
+other two arguments as numbers. As a callback function, you will be able to pass one of the three 
+functions from the previous task. The action function will call the callback function passed to it 
+and will return the obtained result. The callback function will accept the second and third arguments 
+from the action call.
+
+Example of use and expected results:
+console.log(action(add, 12, 10)); // -> 22
+console.log(action(sub, 12, 10)); // -> 2
+console.log(action(mult, 10, 10.1)); // -> NaN
+*/
+let action = (callback, a, b) => callback(a, b);
+// or
+let action = function (callback, a, b) {
+    return callback(a, b);
+}
+// or
+function action(callback, a, b) {
+    return callback(a, b);
+}
+
+/*
+Task 5
+
+Write a program that will print out (to the console) consecutive integers 10 times, 
+in two-second intervals (start with the number 1). Use the functions setInterval, 
+clearInterval and setTimeout.
+
+Example of use and expected results:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+*/
+let counter = 1;
+let intervalId = setInterval(function () {
+    console.log(counter++);
+}, 2000);
+setTimeout(function () {
+    clearInterval(intervalId)
+}, 20000);
+
+/*
+Task 6
+
+Write a function that will calculate the n-th element of the Fibonacci sequence. 
+This sequence is defined by a formula:
+So each element of the sequence (except the first two) is the sum of the previous two. 
+For example: F1 = 1, F2 = F1 + F0 = 1, F3 = F2 + F1 = 2 and F6 = F5 + F4 = 8. 
+The function should use recursion. In the definition, use a function expression 
+(store an anonymous function in a variable).
+
+Example of use and expected results:
+console.log(fibbRec(4)); // -> 3
+console.log(fibbRec(7)); // -> 13
+*/
+let fibbRec = function (n) {
+    let retVal = 0;
+    if (n != 0) {
+        if (n === 1) {
+            retVal = 1;
+        } else {
+            retVal = fibbRec(n - 1) + fibbRec(n - 2);
+        }
+    }
+    return retVal;
+}
+
+/*
+Task 7
+
+Rewrite the function from Task 5 using an arrow function expression, 
+but try to shorten its code as much as possible (use conditional operators, 
+and try not to use additional variables other than the parameter n).
+*/
+let fibb = n => n == 0 ? 0 : (n == 1 ? 1 : fibb(n - 1) + fibb(n - 2));
+
+/*
+Task 8
+
+Write an iterative version of the function from Task 5 (use the for loop). 
+Declare the function using a function statement.
+*/
+function fibbIter(n) {
+    let a = 0, b = 1;
+    for (let i = 2; i <= n; i++) {
+        let c = a;
+        a = b;
+        b += c;        
+    }
+    return b;
+}
+
+// conditionbal exception handling
+let a = -2;
+try {
+    a = b;
+} catch (error) {
+    if (error instanceof ReferenceError) {
+        console.log("Reference error, reset a to -2"); // -> Reference error, reset a to -2
+        a = -2;
+    } else {
+        console.log("Other error - " + error);
+    }
+}
+console.log(a); // -> -2
+
+// The finally statement
+try {
+    // code to try
+} finally {
+    // this will be always executed
+}
+
+// you can use FINALLY without CATCH
+let a = 10;
+try {
+    a = b;  // ReferenceError
+} finally {
+    console.log(a); // -> 10
+}
+console.log(a);
+
+// or FINALLY with CATCH
+let a = 10;
+try {
+    a = b;  // ReferenceError
+} catch (error) {
+    console.log("An Error!"); // -> An Error!
+} finally {
+    console.log("Finally!"); // -> Finally!
+}
+console.log(a); // -> 10
+
+// nested try catches
+let a = 10;
+try {
+    a = b; // First ReferenceError
+} catch (error) {
+    try {
+        console.log(b); // Second ReferenceError
+    } catch {
+        console.log("Second catch!"); // -> Second catch!
+    }
+} finally {
+    console.log("Finally!"); // -> Finally!
+}
+
+/* Why should we use a finally block?
+
+This is a good question, especially since we can achieve almost the same result just by writing 
+the code right outside the try...catch statement, like this:
+*/
+let a = 10;
+try {
+    a = b;  // ReferenceError
+} catch (error) {
+    console.log("An Error!");
+}
+console.log("Finally!");
+
+/*
+This code will have a similar result as the previous example: it will log An Error! and then Finally!.
+It’s true that in this simple example, both scripts will behave the same, but there are slight differences,
+and the most important is that the finally block will be executed even when an error is thrown from the
+catch block.
+*/
+let a = 10;
+try {
+    a = b;  // First ReferenceError
+} catch (error) {
+    console.log(b); // Second ReferenceError
+
+}
+console.log("Finally!");
+/*
+Now the last console.log call will never be executed, as another (this time uncaught) error
+is thrown in the catch block. This won’t happen if we use the finally block like this:
+*/
+let a = 10;
+try {
+    a = b;  // First ReferenceError
+} catch (error) {
+    console.log(b); // Second ReferenceError
+
+} finally {
+    console.log("Finally!");
+}
+
+/*
+Now the console.log call from the finally block will be executed, although this doesn't change
+the fact that program execution will be stopped at this second ReferenceError, as it isn’t caught.
+
+Try...catch...finally blocks can be nested, so we can use a whole try...catch block inside 
+another try...catch block. This is useful when we expect multiple errors to occur and need 
+to handle them all.
+*/
+let a = 10;
+try {
+    a = b; // First ReferenceError
+} catch (error) {
+    try {
+        console.log(b); // Second ReferenceError
+    } catch {
+        console.log("Second catch!"); // -> Second catch!
+    }
+} finally {
+    console.log("Finally!"); // -> Finally!
+}
+// In this example, we catch the exception inside the catch block by placing the code inside 
+// another try...catch statement.
+
+/*
+The throw statement and custom errors
+There are several reasons why you generate your own exceptions. Most of them are quite complex and not very useful at this stage of learning. The easiest situation to imagine is when you write a function of your own, which should signal the incorrect data that has been passed to it.
+
+To throw an exception, we use the throw instruction. It is followed by any value that will be 
+treated as an exception. It can be, for example, a number, or one of the ready-made error objects 
+(e.g. RangeError).
+*/
+console.log("start"); // -> start
+throw 100; // -> Uncaught 100
+console.log("end");
+
+// Let's close the throw instruction inside the try block:
+console.log("start"); // -> start
+try {
+    throw 100;
+} catch (error) {
+    console.log(error); // -> 100
+}
+console.log("end"); // -> end
+
+// a more sensible example of custom errors
+Function factorial(n) {
+    if (n > 20) {
+        throw new RangeError("Max value 20");
+    }
+    let result = 1;
+    for (; n > 1; n--) {
+        result = result * n;
+    }
+    return result;
+}
+
+console.log(factorial(20)); // -> 2432902008176640000
+console.log(factorial(1000)); // -> Uncaught RangeError: Max value 20
+
+// another example
+function div(a, b) {
+    if (b == 0) {
+        throw new RangeError("Can’t divide by 0");
+    }
+    return a / b;
+}
+console.log(div(4, 2)); // -> 2
+console.log(div(4, 0)); // -> Uncaught RangeError: Can’t divide by 0
+
+// another example
+let numbers = [10, 40, 0, 20, 50];
+
+for (let i = 0; i < numbers.length; i++) {
+    let result;
+    try {
+        result = div(1000, numbers[i]);
+    } catch (e) {
+        result = e.message;
+    }
+    console.log(result);
+}
