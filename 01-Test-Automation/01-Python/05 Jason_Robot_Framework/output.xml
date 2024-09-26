@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.4 on win32)" generated="2024-09-25T21:15:37.445976" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\jason\PycharmProjects\robot_test_framework\Jason_Robot_Framework\tests">
+<suite id="s1-s1" name="API" source="C:\Users\jason\PycharmProjects\robot_test_framework\Jason_Robot_Framework\tests\API">
+<suite id="s1-s1-s1" name="Restful Booker" source="C:\Users\jason\PycharmProjects\robot_test_framework\Jason_Robot_Framework\tests\API\restful_booker.robot">
+<kw name="Authenticate as Admin" type="SETUP">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-25T21:15:38.351561" level="INFO">${body} = {'username': 'admin', 'password': 'password123'}</msg>
+<var>${body}</var>
+<arg>username=admin</arg>
+<arg>password=password123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.351561" elapsed="0.000995"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:38.799362" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '48', 'Content-Type': 'application/json'} 
+ body=b'{"username": "admin", "password": "password123"}' 
+ </msg>
+<msg time="2024-09-25T21:15:38.799362" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295338&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=fDzCkKrrn89qP77VIT4E9lvJZAGU1pXPzXb3YTLJFjU%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295338&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=fDzCkKrrn89qP77VIT4E9lvJZAGU1pXPzXb3YTLJFjU%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '27', 'Etag': 'W/"1b-o2bj5obumj76KkBjVO+StovY2fk"', 'Date': 'Wed, 25 Sep 2024 20:15:38 GMT', 'Via': '1.1 vegur'} 
+ body={"token":"1d5150147866dd7"} 
+ </msg>
+<msg time="2024-09-25T21:15:38.799362" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>url=https://restful-booker.herokuapp.com/auth</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.352556" elapsed="0.446806"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:38.800360" level="INFO">{'token': '1d5150147866dd7'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.800360" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>token</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.800360" elapsed="0.000997"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:38.801357" level="INFO">${token} = 1d5150147866dd7</msg>
+<var>${token}</var>
+<arg>${response.json()}[token]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.801357" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:38.802355" level="INFO">1d5150147866dd7</msg>
+<arg>${token}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.802355" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:38.802355" level="INFO">${token} = 1d5150147866dd7</msg>
+<arg>${token}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.802355" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:38.349563" elapsed="0.452792"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Health Check - Ping" line="12">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:39.235198" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/ping 
+ path_url=/ping 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-25T21:15:39.235198" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/ping 
+ status=201, reason=Created 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295339&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=gjkm8JClTO61tIROOBTS6cnPdMYXKmOTKvkpjctmQ8U%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295339&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=gjkm8JClTO61tIROOBTS6cnPdMYXKmOTKvkpjctmQ8U%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '7', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Date': 'Wed, 25 Sep 2024 20:15:39 GMT', 'Via': '1.1 vegur'} 
+ body=Created 
+ </msg>
+<msg time="2024-09-25T21:15:39.235198" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>https://restful-booker.herokuapp.com/ping</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-25T21:15:38.803352" elapsed="0.431846"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.236196" level="INFO">&lt;Response [201]&gt;</msg>
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.236196" elapsed="0.000000"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.236196" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.text}</arg>
+<arg>Created</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.237193" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:38.802355" elapsed="0.435835"/>
+</test>
+<test id="s1-s1-s1-t2" name="Create a Booking at Restful Booker" line="33">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.239188" level="INFO">${booking_dates} = {'checkin': '2022-12-31', 'checkout': '2023-01-01'}</msg>
+<var>${booking_dates}</var>
+<arg>checkin=2022-12-31</arg>
+<arg>checkout=2023-01-01</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.239188" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.240185" level="INFO">${body} = {'firstname': 'Hans', 'lastname': 'Gruber', 'totalprice': '200', 'depositpaid': 'false', 'bookingdates': {'checkin': '2022-12-31', 'checkout': '2023-01-01'}}</msg>
+<var>${body}</var>
+<arg>firstname=Hans</arg>
+<arg>lastname=Gruber</arg>
+<arg>totalprice=200</arg>
+<arg>depositpaid=false</arg>
+<arg>bookingdates=${booking_dates}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.239188" elapsed="0.000997"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:39.669041" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '157', 'Content-Type': 'application/json'} 
+ body=b'{"firstname": "Hans", "lastname": "Gruber", "totalprice": "200", "depositpaid": "false", "bookingdates": {"checkin": "2022-12-31", "checkout": "2023-01-01"}}' 
+ </msg>
+<msg time="2024-09-25T21:15:39.669041" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295339&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=gjkm8JClTO61tIROOBTS6cnPdMYXKmOTKvkpjctmQ8U%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295339&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=gjkm8JClTO61tIROOBTS6cnPdMYXKmOTKvkpjctmQ8U%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '169', 'Etag': 'W/"a9-YOaRghb9nBLAn4gh41Jl0QNHw4Q"', 'Date': 'Wed, 25 Sep 2024 20:15:39 GMT', 'Via': '1.1 vegur'} 
+ body={"bookingid":2474,"booking":{"firstname":"Hans","lastname":"Gruber","totalprice":200,"depositpaid":true,"bookingdates":{"checkin":"2022-12-31","checkout":"2023-01-01"}}} 
+ </msg>
+<msg time="2024-09-25T21:15:39.669041" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>url=https://restful-booker.herokuapp.com/booking</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.240185" elapsed="0.428856"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.671035" level="INFO">${id} = 2474</msg>
+<arg>${id}</arg>
+<arg>${response.json()}[bookingid]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.670037" elapsed="0.000998"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.673030" level="INFO">${firstname} = Hans</msg>
+<arg>${firstname}</arg>
+<arg>${response.json()}[booking][firstname]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.671035" elapsed="0.001995"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.674027" level="INFO">${lastname} = Gruber</msg>
+<arg>${lastname}</arg>
+<arg>${response.json()}[booking][lastname]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.673030" elapsed="0.000997"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.676022" level="INFO">${totalprice} = 200</msg>
+<arg>${totalprice}</arg>
+<arg>${response.json()}[booking][totalprice]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.675024" elapsed="0.000998"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.677019" level="INFO">${depositpaid} = True</msg>
+<arg>${depositpaid}</arg>
+<arg>${response.json()}[booking][depositpaid]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.676022" elapsed="0.000997"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.679015" level="INFO">${checkin} = 2022-12-31</msg>
+<arg>${checkin}</arg>
+<arg>${response.json()}[booking][bookingdates][checkin]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.677019" elapsed="0.001996"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-25T21:15:39.681009" level="INFO">${checkout} = 2023-01-01</msg>
+<arg>${checkout}</arg>
+<arg>${response.json()}[booking][bookingdates][checkout]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.679015" elapsed="0.001994"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:40.067974" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/2474 
+ path_url=/booking/2474 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-25T21:15:40.067974" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/2474 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295340&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=35BFIs%2Fy9DxFNkWYtK1PQDOVcNBhjvSItpK13SBuPgM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295340&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=35BFIs%2Fy9DxFNkWYtK1PQDOVcNBhjvSItpK13SBuPgM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '140', 'Etag': 'W/"8c-ZyMX7q5MPk1IIZgzio6YfZY3B+o"', 'Date': 'Wed, 25 Sep 2024 20:15:40 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Hans","lastname":"Gruber","totalprice":200,"depositpaid":true,"bookingdates":{"checkin":"2022-12-31","checkout":"2023-01-01"}} 
+ </msg>
+<msg time="2024-09-25T21:15:40.068973" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://restful-booker.herokuapp.com/booking/${id}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-25T21:15:39.681009" elapsed="0.387964"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:40.069970" level="INFO">{'firstname': 'Hans', 'lastname': 'Gruber', 'totalprice': 200, 'depositpaid': True, 'bookingdates': {'checkin': '2022-12-31', 'checkout': '2023-01-01'}}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.068973" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[lastname]</arg>
+<arg>Gruber</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.069970" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[firstname]</arg>
+<arg>Hans</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.070968" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-25T21:15:40.072962" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.json()}[totalprice]</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.072962" elapsed="0.000998"/>
+</kw>
+<kw name="Dictionary Should Contain Value" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>Gruber</arg>
+<doc>Fails if ``value`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.073960" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:39.238190" elapsed="0.836767"/>
+</test>
+<test id="s1-s1-s1-t3" name="Get Bookings by ID from Restful Booker" line="52">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:40.503810" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking/2474 
+ path_url=/booking/2474 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-25T21:15:40.503810" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking/2474 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295340&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=35BFIs%2Fy9DxFNkWYtK1PQDOVcNBhjvSItpK13SBuPgM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295340&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=35BFIs%2Fy9DxFNkWYtK1PQDOVcNBhjvSItpK13SBuPgM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '140', 'Etag': 'W/"8c-ZyMX7q5MPk1IIZgzio6YfZY3B+o"', 'Date': 'Wed, 25 Sep 2024 20:15:40 GMT', 'Via': '1.1 vegur'} 
+ body={"firstname":"Hans","lastname":"Gruber","totalprice":200,"depositpaid":true,"bookingdates":{"checkin":"2022-12-31","checkout":"2023-01-01"}} 
+ </msg>
+<msg time="2024-09-25T21:15:40.503810" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://restful-booker.herokuapp.com/booking/${id}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.075954" elapsed="0.427856"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.503810" elapsed="0.000998"/>
+</kw>
+<kw name="Log List" owner="Collections">
+<msg time="2024-09-25T21:15:40.505806" level="INFO">List length is 5 and it contains following items:
+0: firstname
+1: lastname
+2: totalprice
+3: depositpaid
+4: bookingdates</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.504808" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:40.074957" elapsed="0.430849"/>
+</test>
+<test id="s1-s1-s1-t4" name="Get Bookings by First Name from Restful Booker" line="59">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:40.902746" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking?firstname=Hans 
+ path_url=/booking?firstname=Hans 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-25T21:15:40.902746" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking?firstname=Hans 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295340&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=35BFIs%2Fy9DxFNkWYtK1PQDOVcNBhjvSItpK13SBuPgM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295340&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=35BFIs%2Fy9DxFNkWYtK1PQDOVcNBhjvSItpK13SBuPgM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '20', 'Etag': 'W/"14-sHzljAPzoeSEqDirBYRlZs6MVeQ"', 'Date': 'Wed, 25 Sep 2024 20:15:40 GMT', 'Via': '1.1 vegur'} 
+ body=[{"bookingid":2474}] 
+ </msg>
+<msg time="2024-09-25T21:15:40.903744" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://restful-booker.herokuapp.com/booking</arg>
+<arg>params=firstname=${firstname}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.506803" elapsed="0.396941"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.903744" elapsed="0.000000"/>
+</kw>
+<kw name="Log List" owner="Collections">
+<msg time="2024-09-25T21:15:40.904741" level="INFO">List has one item:
+{'bookingid': 2474}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.903744" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:40.505806" elapsed="0.398935"/>
+</test>
+<test id="s1-s1-s1-t5" name="Get Bookings by Last Name from Restful Booker" line="65">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:41.326614" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking?lastname=Gruber 
+ path_url=/booking?lastname=Gruber 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-25T21:15:41.326614" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking?lastname=Gruber 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295341&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=H94%2F9I0H4Zq7H4GgmAp3%2Fqtr23rlErWmnZP8hRX%2BRfc%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295341&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=H94%2F9I0H4Zq7H4GgmAp3%2Fqtr23rlErWmnZP8hRX%2BRfc%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '20', 'Etag': 'W/"14-sHzljAPzoeSEqDirBYRlZs6MVeQ"', 'Date': 'Wed, 25 Sep 2024 20:15:41 GMT', 'Via': '1.1 vegur'} 
+ body=[{"bookingid":2474}] 
+ </msg>
+<msg time="2024-09-25T21:15:41.326614" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://restful-booker.herokuapp.com/booking</arg>
+<arg>params=lastname=${lastname}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-09-25T21:15:40.905738" elapsed="0.420876"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.326614" elapsed="0.000000"/>
+</kw>
+<kw name="Log List" owner="Collections">
+<msg time="2024-09-25T21:15:41.327612" level="INFO">List has one item:
+{'bookingid': 2474}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.327612" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:40.905738" elapsed="0.422871"/>
+</test>
+<test id="s1-s1-s1-t6" name="Delete Booking" line="70">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-09-25T21:15:41.329606" level="INFO">${header} = {'Cookie': 'token=1d5150147866dd7'}</msg>
+<var>${header}</var>
+<arg>Cookie=token\=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.329606" elapsed="0.000000"/>
+</kw>
+<kw name="DELETE" owner="RequestsLibrary">
+<msg time="2024-09-25T21:15:41.759458" level="INFO">DELETE Request : url=https://restful-booker.herokuapp.com/booking/2474 
+ path_url=/booking/2474 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'token=1d5150147866dd7', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2024-09-25T21:15:41.759458" level="INFO">DELETE Response : url=https://restful-booker.herokuapp.com/booking/2474 
+ status=201, reason=Created 
+ headers={'Server': 'Cowboy', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1727295341&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=H94%2F9I0H4Zq7H4GgmAp3%2Fqtr23rlErWmnZP8hRX%2BRfc%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1727295341&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=H94%2F9I0H4Zq7H4GgmAp3%2Fqtr23rlErWmnZP8hRX%2BRfc%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '7', 'Etag': 'W/"7-rM9AyJuqT6iOan/xHh+AW+7K/T8"', 'Date': 'Wed, 25 Sep 2024 20:15:41 GMT', 'Via': '1.1 vegur'} 
+ body=Created 
+ </msg>
+<msg time="2024-09-25T21:15:41.760456" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>url=https://restful-booker.herokuapp.com/booking/${id}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a DELETE request.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.330604" elapsed="0.429852"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.760456" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:41.328609" elapsed="0.431847"/>
+</test>
+<status status="PASS" start="2024-09-25T21:15:37.576628" elapsed="4.184826"/>
+</suite>
+<status status="PASS" start="2024-09-25T21:15:37.566654" elapsed="4.195797"/>
+</suite>
+<suite id="s1-s2" name="Web UI" source="C:\Users\jason\PycharmProjects\robot_test_framework\Jason_Robot_Framework\tests\Web_UI">
+<suite id="s1-s2-s1" name="Keyword Demo" source="C:\Users\jason\PycharmProjects\robot_test_framework\Jason_Robot_Framework\tests\Web_UI\keyword_demo">
+<suite id="s1-s2-s1-s1" name="Keyword Demo Basic" source="C:\Users\jason\PycharmProjects\robot_test_framework\Jason_Robot_Framework\tests\Web_UI\keyword_demo\keyword_demo_basic.robot">
+<test id="s1-s2-s1-s1-t1" name="Test case 1" line="5">
+<kw name="Do Something">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:41.785390" level="INFO">I am doing something......</msg>
+<arg>I am doing something......</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.785390" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:41.784393" elapsed="0.000997"/>
+</kw>
+<kw name="Do Something Else">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:41.786388" level="INFO">I am doing something else.....</msg>
+<arg>I am doing something else.....</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.785390" elapsed="0.000998"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:41.785390" elapsed="0.000998"/>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-09-25T21:15:41.784393" elapsed="0.001995"/>
+</test>
+<test id="s1-s2-s1-s1-t2" name="Test case 2" line="11">
+<kw name="Do Another Thing">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:41.787384" level="INFO">I am doing another thing.....</msg>
+<arg>I am doing another thing.....</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.787384" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:41.787384" elapsed="0.000000"/>
+</kw>
+<kw name="Do Something Else">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-25T21:15:41.788381" level="INFO">I am doing something else.....</msg>
+<arg>I am doing something else.....</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-25T21:15:41.788381" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:41.788381" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:41.787384" elapsed="0.000997"/>
+</test>
+<status status="PASS" start="2024-09-25T21:15:41.776413" elapsed="0.012968"/>
+</suite>
+<suite id="s1-s2-s1-s2" name="Keyword Demo Invoice App" source="C:\Users\jason\PycharmProjects\robot_test_framework\Jason_Robot_Framework\tests\Web_UI\keyword_demo\keyword_demo_invoice_app.robot">
+<test id="s1-s2-s1-s2-t1" name="Test case 1" line="13">
+<kw name="Navigate to invoice app" owner="common">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:42.924349" level="INFO">Opening browser 'firefox' to base url 'http://inv.beaufortfairmont.com/#/'.</msg>
+<arg>url=http://inv.beaufortfairmont.com/#/</arg>
+<arg>browser=firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-25T21:15:42.924349" elapsed="12.327084"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:42.923351" elapsed="12.328082"/>
+</kw>
+<kw name="Click 'invoices' on navigation bar" owner="common">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:55.253428" level="INFO">Clicking link 'Invoices'.</msg>
+<arg>Invoices</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:55.252430" elapsed="0.084774"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:55.251433" elapsed="0.085771"/>
+</kw>
+<doc>See all invoices</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-09-25T21:15:42.922354" elapsed="12.415848"/>
+</test>
+<test id="s1-s2-s1-s2-t2" name="Test case 2" line="20">
+<kw name="Click 'add invoices' on navigation bar" owner="common">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:55.340196" level="INFO">Clicking link 'Add Invoice'.</msg>
+<arg>Add Invoice</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:55.340196" elapsed="0.047872"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:55.339198" elapsed="0.048870"/>
+</kw>
+<kw name="Enter valid invoice details" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#invoiceNo_add &gt; input:nth-child(2)</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T21:15:55.390064" elapsed="0.260304"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:55.651367" level="INFO">Typing text 'text1' into text field 'css:#invoiceNo_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#invoiceNo_add &gt; input:nth-child(2)</arg>
+<arg>text1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:55.651367" elapsed="0.188494"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:55.840858" level="INFO">Typing text 'text 2' into text field 'css:#compName_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#compName_add &gt; input:nth-child(2)</arg>
+<arg>text 2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:55.840858" elapsed="0.085773"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:55.927628" level="INFO">Typing text 'text 3' into text field 'css:#typeofwork_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#typeofwork_add &gt; input:nth-child(2)</arg>
+<arg>text 3</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:55.927628" elapsed="0.057846"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:55.986470" level="INFO">Typing text 'text 4' into text field 'css:#cost_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#cost_add &gt; input:nth-child(2)</arg>
+<arg>text 4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:55.985474" elapsed="0.089761"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:56.076233" level="INFO">Selecting options from selection list 'css:#selectStatus' by label Paid.</msg>
+<arg>css:#selectStatus</arg>
+<arg>Paid</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-09-25T21:15:56.076233" elapsed="0.332110"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:56.409341" level="INFO">Typing text '2024-01-01' into text field 'css:#invoice_dueDate &gt; input:nth-child(2)'.</msg>
+<arg>css:#invoice_dueDate &gt; input:nth-child(2)</arg>
+<arg>2024-01-01</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:56.409341" elapsed="0.056848"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:56.466189" level="INFO">Typing text 'text5' into text field 'css:#comments_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#comments_add &gt; input:nth-child(2)</arg>
+<arg>text5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:56.466189" elapsed="0.051862"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:55.389065" elapsed="1.128986"/>
+</kw>
+<kw name="Submit Invoice" owner="common">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:56.521042" level="INFO">Clicking button 'css:#createButton'.</msg>
+<arg>css:#createButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:56.520045" elapsed="0.311170"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:56.520045" elapsed="0.311170"/>
+</kw>
+<doc>Add valid invoice</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-09-25T21:15:55.338202" elapsed="1.494010"/>
+</test>
+<test id="s1-s2-s1-s2-t3" name="Test case 3" line="28">
+<kw name="Click 'add invoices' on navigation bar" owner="common">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:56.834207" level="INFO">Clicking link 'Add Invoice'.</msg>
+<arg>Add Invoice</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:56.834207" elapsed="0.103722"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:56.834207" elapsed="0.103722"/>
+</kw>
+<kw name="Enter invalid invoice details" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.038660" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T21:15:57.038660" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:800:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:2962:11
+</msg>
+<arg>css:#invoiceNo_add &gt; input:nth-child(2)</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-09-25T21:15:56.937929" elapsed="0.116689">UnexpectedAlertPresentException: Alert Text: None
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:800:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:2962:11
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:#invoiceNo_add &gt; input:nth-child(2)</arg>
+<arg>text1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-09-25T21:15:57.055615" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:#typeofwork_add &gt; input:nth-child(2)</arg>
+<arg>text 3</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-09-25T21:15:57.055615" elapsed="0.000000"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<arg>css:#selectStatus</arg>
+<arg>Paid</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="NOT RUN" start="2024-09-25T21:15:57.055615" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:#invoice_dueDate &gt; input:nth-child(2)</arg>
+<arg>adadad</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-09-25T21:15:57.056613" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:#comments_add &gt; input:nth-child(2)</arg>
+<arg>text5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-09-25T21:15:57.056613" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-09-25T21:15:56.937929" elapsed="0.118684">UnexpectedAlertPresentException: Alert Text: None
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:800:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:2962:11
+</status>
+</kw>
+<kw name="Submit Invoice" owner="common">
+<status status="NOT RUN" start="2024-09-25T21:15:57.057610" elapsed="0.000000"/>
+</kw>
+<kw name="Alert Should Be Present" owner="SeleniumLibrary">
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<status status="NOT RUN" start="2024-09-25T21:15:57.057610" elapsed="0.000000"/>
+</kw>
+<doc>Add invalid invoice</doc>
+<tag>Smoke</tag>
+<status status="FAIL" start="2024-09-25T21:15:56.833209" elapsed="0.225398">UnexpectedAlertPresentException: Alert Text: None
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:193:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:800:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:2962:11
+</status>
+</test>
+<test id="s1-s2-s1-s2-t4" name="Test case 4" line="37">
+<kw name="Click 'add invoices' on navigation bar" owner="common">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.060602" level="INFO">Clicking link 'Add Invoice'.</msg>
+<arg>Add Invoice</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.059604" elapsed="0.230386"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:57.059604" elapsed="0.230386"/>
+</kw>
+<kw name="Enter valid invoice details" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#invoiceNo_add &gt; input:nth-child(2)</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.290986" elapsed="0.025932"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.316918" level="INFO">Typing text 'text1' into text field 'css:#invoiceNo_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#invoiceNo_add &gt; input:nth-child(2)</arg>
+<arg>text1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.316918" elapsed="0.054853"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.371771" level="INFO">Typing text 'text 2' into text field 'css:#compName_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#compName_add &gt; input:nth-child(2)</arg>
+<arg>text 2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.371771" elapsed="0.053856"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.426625" level="INFO">Typing text 'text 3' into text field 'css:#typeofwork_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#typeofwork_add &gt; input:nth-child(2)</arg>
+<arg>text 3</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.425627" elapsed="0.065824"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.492449" level="INFO">Typing text 'text 4' into text field 'css:#cost_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#cost_add &gt; input:nth-child(2)</arg>
+<arg>text 4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.491451" elapsed="0.036902"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.528353" level="INFO">Selecting options from selection list 'css:#selectStatus' by label Paid.</msg>
+<arg>css:#selectStatus</arg>
+<arg>Paid</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.528353" elapsed="0.038898"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.568246" level="INFO">Typing text '2024-01-01' into text field 'css:#invoice_dueDate &gt; input:nth-child(2)'.</msg>
+<arg>css:#invoice_dueDate &gt; input:nth-child(2)</arg>
+<arg>2024-01-01</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.568246" elapsed="0.036902"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.606145" level="INFO">Typing text 'text5' into text field 'css:#comments_add &gt; input:nth-child(2)'.</msg>
+<arg>css:#comments_add &gt; input:nth-child(2)</arg>
+<arg>text5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.606145" elapsed="0.042886"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:57.289990" elapsed="0.359041"/>
+</kw>
+<kw name="Cancel invoice" owner="common">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-25T21:15:57.650029" level="INFO">Clicking button 'css:#content-wrapper &gt; div &gt; div.ng-scope &gt; div &gt; div &gt; form &gt; a:nth-child(9) &gt; button'.</msg>
+<arg>css:#content-wrapper &gt; div &gt; div.ng-scope &gt; div &gt; div &gt; form &gt; a:nth-child(9) &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.650029" elapsed="0.058841"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:57.649031" elapsed="0.059839"/>
+</kw>
+<doc>Cancel invoice</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-09-25T21:15:57.058607" elapsed="0.651262"/>
+</test>
+<test id="s1-s2-s1-s2-t5" name="Test case 5" line="45">
+<kw name="End test" owner="common">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-25T21:15:57.712860" elapsed="3.408899"/>
+</kw>
+<status status="PASS" start="2024-09-25T21:15:57.712860" elapsed="3.408899"/>
+</kw>
+<doc>Teardown</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2024-09-25T21:15:57.711864" elapsed="3.409895"/>
+</test>
+<status status="FAIL" start="2024-09-25T21:15:41.790378" elapsed="19.332377"/>
+</suite>
+<status status="FAIL" start="2024-09-25T21:15:41.768435" elapsed="19.355318"/>
+</suite>
+<status status="FAIL" start="2024-09-25T21:15:41.762451" elapsed="19.362299"/>
+</suite>
+<status status="FAIL" start="2024-09-25T21:15:37.458944" elapsed="23.666803"/>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="1" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="12" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="API">Tests.API</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1-s1" name="Restful Booker">Tests.API.Restful Booker</stat>
+<stat pass="6" fail="1" skip="0" id="s1-s2" name="Web UI">Tests.Web UI</stat>
+<stat pass="6" fail="1" skip="0" id="s1-s2-s1" name="Keyword Demo">Tests.Web UI.Keyword Demo</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2-s1-s1" name="Keyword Demo Basic">Tests.Web UI.Keyword Demo.Keyword Demo Basic</stat>
+<stat pass="4" fail="1" skip="0" id="s1-s2-s1-s2" name="Keyword Demo Invoice App">Tests.Web UI.Keyword Demo.Keyword Demo Invoice App</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

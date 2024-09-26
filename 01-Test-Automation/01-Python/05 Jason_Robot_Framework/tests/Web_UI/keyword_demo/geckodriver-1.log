@@ -1,0 +1,18 @@
+1727278677977	geckodriver	INFO	Listening on 127.0.0.1:62403
+1727278680069	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62404" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\jason\\AppData\\Local\\Temp\\rust_mozprofile4ha2O3"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1727278681594	Marionette	INFO	Marionette enabled
+1727278681860	Marionette	INFO	Listening on port 62420
+WebDriver BiDi listening on ws://127.0.0.1:62404
+Read port: 62420
+1727278682062	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:62404/devtools/browser/a0e85cd7-7bad-4a2b-b48a-b46e29560a76
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://inv.beaufortfairmont.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://inv.beaufortfairmont.com."
+1727278687488	Marionette	INFO	Stopped listening on port 62420
+JavaScript warning: http://inv.beaufortfairmont.com/component/angular/angular.min.js, line 38: Script terminated by timeout at:
+ea@http://inv.beaufortfairmont.com/component/angular/angular.min.js:38:126
+
+Dynamically enable window occlusion 1
